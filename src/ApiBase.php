@@ -2,13 +2,13 @@
 
 use \GuzzleHttp\Psr7\Utils;
 
-namespace Hsr\Microservice;
+namespace HSR\Microservice;
 
 abstract class ApiBase
 {
 
     public $client;
-
+    
     private $settings;
     
 
