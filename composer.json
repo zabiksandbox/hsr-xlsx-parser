@@ -11,7 +11,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "HSR\\Microservice\\": "src/"
+            "Hsr\\Microservice\\": "src/"
         }
     },
     "authors": [
