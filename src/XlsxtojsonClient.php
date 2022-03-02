@@ -1,6 +1,6 @@
 <?php
 
-namespace HSR\Microservice;
+namespace Hsr\Microservice;
 
 class XlsxtojsonClient
 {
