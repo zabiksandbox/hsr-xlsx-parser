@@ -1,0 +1,25 @@
+{
+    "name": "hsr/xlsxtojson",
+    "description": "Parse xlsx files to json via api",
+    "type": "library",
+    "version": "1.0.2",
+    "require": {
+        "php": "^7.3|^8.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "symfony/dotenv": "^5.4.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HSR\\Microservice\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "zabik",
+            "email": "andrey@zabironin.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
