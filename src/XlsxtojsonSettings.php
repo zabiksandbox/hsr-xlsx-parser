@@ -15,8 +15,9 @@ class XlsxtojsonSettings
 
 		$rootDir = __DIR__.'/../../../../';
 
-        $dotenv->load($rootDir.'.env');
-
+		$dotenv = \Dotenv\Dotenv::createImmutable($rootDir);
+		$dotenv->safeLoad();
+		
         $this->MICROSERVICE_URI 		= isset($_ENV['HSR_MICROSERVICE_URI']) ? $_ENV['HSR_MICROSERVICE_URI'] : 30;
         $this->TIMEOUT_SEC 				= isset($_ENV['HSR_MICROSERVICE_TIMEOUT_SEC']) ? $_ENV['HSR_MICROSERVICE_TIMEOUT_SEC'] : 30;
 	    $this->CACERT_PEM 				= isset($_ENV['HSR_MICROSERVICE_CACERT_PEM']) ? $_ENV['HSR_MICROSERVICE_CACERT_PEM'] : false;
