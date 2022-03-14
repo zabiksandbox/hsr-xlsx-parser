@@ -11,8 +11,7 @@ class XlsxtojsonSettings
 	public $API_KEY;
 
 	public function __construct(){
-		$dotenv = new \Symfony\Component\Dotenv\Dotenv();
-
+		
 		$rootDir = __DIR__.'/../../../../';
 
 		$dotenv = \Dotenv\Dotenv::createImmutable($rootDir);
