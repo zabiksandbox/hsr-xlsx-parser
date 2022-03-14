@@ -2,7 +2,7 @@
 
 use \GuzzleHttp\Psr7\Utils;
 
-namespace HSR\Microservice;
+namespace Hsr\Microservice;
 
 abstract class ApiBase
 {
