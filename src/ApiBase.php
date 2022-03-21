@@ -41,8 +41,6 @@ abstract class ApiBase
     protected function multipart($url, $filepath, $options)
     {
 
-        print '['.$filepath.']'.PHP_EOL;
-
         if (file_exists($filepath)) {
             $multipart = [
                 'headers' => [
