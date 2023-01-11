@@ -1,27 +1,24 @@
 <?php
 
-use \GuzzleHttp\Psr7\Utils;
-
 namespace Hsr\Microservice;
+
+use \GuzzleHttp\Psr7\Utils;
 
 abstract class ApiBase
 {
-
     public $client;
-    
+
     private $settings;
-    
 
     public function __construct()
     {
         $this->settings = new XlsxtojsonSettings();
-        
+
         $this->client = new \GuzzleHttp\Client([
             "base_uri" => $this->settings->MICROSERVICE_URI,
             "timeout" => $this->settings->TIMEOUT_SEC,
             "verify" =>  $this->settings->CACERT_PEM == "false" ? false : $this->settings->CACERT_PEM,
         ]);
-
     }
 
     protected function get($url, $query = [])
@@ -40,7 +37,6 @@ abstract class ApiBase
 
     protected function multipart($url, $filepath, $options)
     {
-
         if (file_exists($filepath)) {
             $multipart = [
                 'headers' => [
@@ -55,16 +51,20 @@ abstract class ApiBase
                     ]
                 ],
             ];
+
             if ($this->settings->CACERT_KEY != "false") {
                 $multipart['cert'] = [$this->settings->CACERT_KEY, $this->settings->CACERT_KEY_PASSPHRASE];
             }
+
             foreach($options as $key => $value) {
                 $multipart['multipart'][] = [
                     'name' => $key,
                     'contents' => $value,
                 ];    
             }
+
             $response = $this->client->request('POST', $url, $multipart);
+
             return json_decode($response->getBody(), true);
         } else {
             return [
