@@ -1,8 +1,8 @@
 <?php
 
-use Hsr\Microservice\ApiBase;
-
 namespace Hsr\Microservice;
+
+use Hsr\Microservice\ApiBase;
 
 class Xlsxtojson extends ApiBase
 {
